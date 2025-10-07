@@ -744,11 +744,22 @@
         // Data structure for all programs with new hierarchy
         const programsData = {
             formacion: {
-                title: "Formación y Desarrollo",
+                title: "Academias Formación y Desarrollo",
                 description: "Programas integrales de capacitación, liderazgo y desarrollo profesional",
                 layers: {
                     "Academia Liderazgo": {
                         sections: {
+                            "Carreras": {
+                                icon: "🎯",
+                                description: "Rutas de desarrollo profesional",
+                                activities: [
+                                    { name: "Líderes Formadores", description: "Formando a Otros" },
+                                    { name: "Mandos Medios", description: "Programa para supervisores y coordinadores" },
+                                    { name: "Líderes en Crecimiento", description: "Desarrollo de nuevos talentos directivos" },
+                                    { name: "Líderes Multigeneracionales", description: "Gestión de equipos diversos" },
+                                    { name: "Líderes Más Humanos", description: "Liderazgo empático y consciente" }
+                                ]
+                            },
                             "Conexión": {
                                 icon: "🌟",
                                 description: "Espacios de conexión y networking",
@@ -759,17 +770,7 @@
                                     { name: "Revista", description: "Publicación mensual de liderazgo" },
                                     { name: "Webinars", description: "Conferencias virtuales interactivas" }
                                 ]
-                            },
-                            "Carreras": {
-                                icon: "🎯",
-                                description: "Rutas de desarrollo profesional",
-                                activities: [
-                                    { name: "Mandos Medios", description: "Programa para supervisores y coordinadores" },
-                                    { name: "Líderes en Crecimiento", description: "Desarrollo de nuevos talentos directivos" },
-                                    { name: "Líderes Multigeneracionales", description: "Gestión de equipos diversos" },
-                                    { name: "Líderes Más Humanos", description: "Liderazgo empático y consciente" }
-                                ]
-                            },
+                            },                            
                             "Comunidad": {
                                 icon: "🤝",
                                 description: "Red de líderes y colaboradores",
@@ -1033,41 +1034,6 @@
                                 ]
                             }
                         }
-                    },
-                    "Capacitaciones": {
-                        sections: {
-                            "Integral Multidisciplinas": {
-                                icon: "🎯",
-                                description: "Formación integral transversal",
-                                activities: [
-                                    { name: "Programa Integral", description: "Desarrollo de competencias múltiples" }
-                                ]
-                            },
-                            "Certificación SAC": {
-                                icon: "📞",
-                                description: "Servicio de Atención al Cliente",
-                                activities: [
-                                    { name: "Certificación SAC", description: "Especialización en atención al cliente" }
-                                ]
-                            },
-                            "Técnica Instalaciones": {
-                                icon: "🔧",
-                                description: "Competencias técnicas especializadas",
-                                activities: [
-                                    { name: "Instalaciones Técnicas", description: "Procedimientos de instalación" }
-                                ]
-                            },
-                            "Talleres Especializados": {
-                                icon: "🛠️",
-                                description: "Talleres prácticos especializados",
-                                activities: [
-                                    { name: "Comunicación", description: "Habilidades comunicativas efectivas" },
-                                    { name: "Estrategia", description: "Pensamiento estratégico y planificación" },
-                                    { name: "Gestión del Tiempo", description: "Productividad y organización personal" },
-                                    { name: "Servicio al Cliente", description: "Excelencia en atención al cliente" }
-                                ]
-                            }
-                        }
                     }
                 }
             },
@@ -1128,41 +1094,6 @@
                                     { name: "Inclusión Digital", description: "Acceso a tecnologías" },
                                     { name: "Desarrollo Sostenible", description: "Prácticas ambientalmente responsables" },
                                     { name: "Participación Ciudadana", description: "Involucramiento comunitario" }
-                                ]
-                            }
-                        }
-                    },
-                    "Capacitaciones": {
-                        sections: {
-                            "Integral Multidisciplinas": {
-                                icon: "🎯",
-                                description: "Formación integral transversal",
-                                activities: [
-                                    { name: "Programa Integral", description: "Desarrollo de competencias múltiples" }
-                                ]
-                            },
-                            "Certificación SAC": {
-                                icon: "📞",
-                                description: "Servicio de Atención al Cliente",
-                                activities: [
-                                    { name: "Certificación SAC", description: "Especialización en atención al cliente" }
-                                ]
-                            },
-                            "Técnica Instalaciones": {
-                                icon: "🔧",
-                                description: "Competencias técnicas especializadas",
-                                activities: [
-                                    { name: "Instalaciones Técnicas", description: "Procedimientos de instalación" }
-                                ]
-                            },
-                            "Talleres Especializados": {
-                                icon: "🛠️",
-                                description: "Talleres prácticos especializados",
-                                activities: [
-                                    { name: "Comunicación", description: "Habilidades comunicativas efectivas" },
-                                    { name: "Estrategia", description: "Pensamiento estratégico y planificación" },
-                                    { name: "Gestión del Tiempo", description: "Productividad y organización personal" },
-                                    { name: "Servicio al Cliente", description: "Excelencia en atención al cliente" }
                                 ]
                             }
                         }
@@ -1328,7 +1259,7 @@
             const container = document.getElementById('layer3Container');
             container.innerHTML = `
                 <div class="layer3-title">
-                    ${section.icon} ${sectionKey} - Actividades
+                    ${section.icon} ${sectionKey} 
                 </div>
                 <div class="activities-grid">
                     ${section.activities.map(activity => `
