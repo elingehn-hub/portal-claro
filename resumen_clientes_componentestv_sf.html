@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Resumen Clientes con Tarjetas y Botón</title>
+
+<style>
+:root{--rojo:#d0021b; --gris1:#111; --gris2:#333; --gris3:#777; --gris4:#eee; --blanco:#fff; --negro:#000;}
+body{font-family:Arial, Helvetica, sans-serif; background-color:var(--blanco); color:var(--negro); margin:0;}
+header{background:var(--negro); color:var(--blanco); padding:16px 24px;}
+header h1{margin:0; font-size:22px; color:var(--rojo);} 
+.container{padding:24px;}
+.cards{display:flex; flex-wrap:wrap; gap:16px; margin:16px 0;}
+.card{flex:1 1 240px; background:var(--gris2); color:var(--blanco); padding:16px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.15);} 
+.card h3{margin:0 0 8px 0; font-weight:600;}
+.card .value{font-size:28px; font-weight:700;}
+.card.alt{background:var(--rojo);} 
+.card.small{flex:1 1 180px;}
+.section-title{margin:24px 0 8px; color:var(--gris1); border-left:6px solid var(--rojo); padding-left:10px;}
+.table{width:100%; border-collapse:collapse; margin:16px 0;}
+.table th, .table td{border:1px solid var(--gris3); padding:8px; text-align:center;}
+.table th{background:var(--gris1); color:var(--blanco);} 
+.table-striped tr:nth-child(even){background:var(--gris4);} 
+.download-btn{display:inline-block; background-color:#d0021b; color:#fff; padding:12px 20px; font-size:16px; font-weight:bold; text-decoration:none; border-radius:8px; margin:20px auto;}
+.download-container{text-align:center; margin:20px 0;}
+footer{background:var(--gris1); color:var(--blanco); padding:16px; text-align:center;}
+</style>
+
+</head>
+<body>
+<header>
+  <h1>Resumen Intermedio de Clientes Únicos</h1>
+</header>
+<div class='container'>
+  
+<div class='cards'>
+  <div class='card alt'>
+    <h3>Total Clientes Únicos</h3>
+    <div class='value'>759</div>
+  </div>
+  <div class='card'>
+    <h3>Periodos Únicos</h3>
+    <div class='value'>13</div>
+  </div>
+  <div class='card' style='background:#555;'>
+    <h3>Clases de Servicio Únicas</h3>
+    <div class='value'>16</div>
+  </div>
+</div>
+<div class='cards'>
+  <div class='card small'>
+    <h3>Periodo con más clientes</h3>
+    <div class='value'>202510</div>
+    <div class='note'>Clientes en ese periodo: 633</div>
+  </div>
+  <div class='card small'>
+    <h3>Clase de servicio con más clientes</h3>
+    <div class='value'>* PAQUETE HBO + HBO HD</div>
+    <div class='note'>Clientes totales: 1823</div>
+  </div>
+</div>
+
+  <h2 class='section-title'>Resumen por IDPERIODO</h2>
+  <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>IDPERIODO</th>
+      <th>CLIENTES</th>
+      <th>COMPONENTES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>202410</td>
+      <td>87</td>
+      <td>107</td>
+    </tr>
+    <tr>
+      <td>202411</td>
+      <td>178</td>
+      <td>203</td>
+    </tr>
+    <tr>
+      <td>202412</td>
+      <td>258</td>
+      <td>310</td>
+    </tr>
+    <tr>
+      <td>202501</td>
+      <td>335</td>
+      <td>436</td>
+    </tr>
+    <tr>
+      <td>202502</td>
+      <td>390</td>
+      <td>505</td>
+    </tr>
+    <tr>
+      <td>202503</td>
+      <td>420</td>
+      <td>543</td>
+    </tr>
+    <tr>
+      <td>202504</td>
+      <td>31</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <td>202505</td>
+      <td>494</td>
+      <td>630</td>
+    </tr>
+    <tr>
+      <td>202506</td>
+      <td>528</td>
+      <td>668</td>
+    </tr>
+    <tr>
+      <td>202507</td>
+      <td>554</td>
+      <td>698</td>
+    </tr>
+    <tr>
+      <td>202508</td>
+      <td>582</td>
+      <td>728</td>
+    </tr>
+    <tr>
+      <td>202509</td>
+      <td>607</td>
+      <td>750</td>
+    </tr>
+    <tr>
+      <td>202510</td>
+      <td>633</td>
+      <td>777</td>
+    </tr>
+  </tbody>
+</table>
+  <h2 class='section-title'>Resumen por CLASE_SERVICIO (Clientes únicos por periodo + Total)</h2>
+  <table border="1" class="dataframe table table-striped">
+  <thead>
+    <tr style="text-align: right;">
+      <th>IDPERIODO</th>
+      <th>CLASE_SERVICIO</th>
+      <th>202410</th>
+      <th>202411</th>
+      <th>202412</th>
+      <th>202501</th>
+      <th>202502</th>
+      <th>202503</th>
+      <th>202504</th>
+      <th>202505</th>
+      <th>202506</th>
+      <th>202507</th>
+      <th>202508</th>
+      <th>202509</th>
+      <th>202510</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>* PAQUETE HBO + HBO HD</td>
+      <td>40</td>
+      <td>65</td>
+      <td>92</td>
+      <td>118</td>
+      <td>131</td>
+      <td>148</td>
+      <td>15</td>
+      <td>176</td>
+      <td>188</td>
+      <td>205</td>
+      <td>210</td>
+      <td>214</td>
+      <td>221</td>
+      <td>1823</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>* PAQUETE UNIVERSAL PLUS</td>
+      <td>15</td>
+      <td>31</td>
+      <td>46</td>
+      <td>62</td>
+      <td>76</td>
+      <td>82</td>
+      <td>8</td>
+      <td>96</td>
+      <td>101</td>
+      <td>106</td>
+      <td>114</td>
+      <td>117</td>
+      <td>112</td>
+      <td>966</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>* PAQUETE UNIVERSAL PLUS + HD</td>
+      <td>11</td>
+      <td>23</td>
+      <td>37</td>
+      <td>54</td>
+      <td>68</td>
+      <td>74</td>
+      <td>7</td>
+      <td>86</td>
+      <td>92</td>
+      <td>93</td>
+      <td>95</td>
+      <td>98</td>
+      <td>99</td>
+      <td>837</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>* PAQUETE HBO</td>
+      <td>9</td>
+      <td>24</td>
+      <td>34</td>
+      <td>44</td>
+      <td>48</td>
+      <td>50</td>
+      <td>3</td>
+      <td>58</td>
+      <td>59</td>
+      <td>61</td>
+      <td>65</td>
+      <td>69</td>
+      <td>76</td>
+      <td>600</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>DTH - Paquete HBO</td>
+      <td>15</td>
+      <td>27</td>
+      <td>37</td>
+      <td>39</td>
+      <td>42</td>
+      <td>40</td>
+      <td>3</td>
+      <td>47</td>
+      <td>51</td>
+      <td>47</td>
+      <td>50</td>
+      <td>54</td>
+      <td>54</td>
+      <td>506</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>GPON Paquete Universal PREMIUM</td>
+      <td>5</td>
+      <td>13</td>
+      <td>19</td>
+      <td>28</td>
+      <td>34</td>
+      <td>38</td>
+      <td>1</td>
+      <td>44</td>
+      <td>49</td>
+      <td>56</td>
+      <td>60</td>
+      <td>64</td>
+      <td>73</td>
+      <td>484</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>DTH - Paquete Universal+</td>
+      <td>4</td>
+      <td>5</td>
+      <td>10</td>
+      <td>14</td>
+      <td>21</td>
+      <td>22</td>
+      <td>0</td>
+      <td>24</td>
+      <td>24</td>
+      <td>22</td>
+      <td>21</td>
+      <td>21</td>
+      <td>23</td>
+      <td>211</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>DTH - PAQUETE MINI HBO</td>
+      <td>2</td>
+      <td>5</td>
+      <td>5</td>
+      <td>8</td>
+      <td>9</td>
+      <td>9</td>
+      <td>0</td>
+      <td>10</td>
+      <td>10</td>
+      <td>12</td>
+      <td>12</td>
+      <td>12</td>
+      <td>11</td>
+      <td>105</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>GPON Paquete CLARO MAX</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>8</td>
+      <td>8</td>
+      <td>11</td>
+      <td>13</td>
+      <td>17</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Paquete Mini Universal Plus HD</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>4</td>
+      <td>0</td>
+      <td>6</td>
+      <td>6</td>
+      <td>7</td>
+      <td>6</td>
+      <td>6</td>
+      <td>6</td>
+      <td>51</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>DTH - PAQUETE MINI Universal+</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>HFC Paquete CLARO MAX</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>Paquete Mini HBO HD</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>4</td>
+      <td>4</td>
+      <td>3</td>
+      <td>3</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>DTH Paquete CLARO MAX</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>GPON Paquete UNIVERSAL 2025</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>HFC Paquete UNIVERSAL 2025</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+  
+<div class='download-container'>
+    <a class='download-btn' href='https://elingehn-hub.github.io/portal-claro/SFComp.xlsx' download>
+        Descargar Archivo SFComp.xlsx
+    </a>
+</div>
+
+</div>
+<footer>
+  Generado automáticamente — Paleta: rojo, grises, blanco y negro.
+</footer>
+</body>
+</html>
