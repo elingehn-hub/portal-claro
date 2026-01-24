@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planificación Universidad Claro Honduras</title>
+    <style>
+        :root {
+            /* Paleta ajustada: Enero y Febrero ahora son Rojos tipo Claro */
+            --c-ene: #da291c; /* Rojo Claro Institucional */
+            --c-feb: #a50d0d; /* Rojo Oscuro */
+            --c-mar: #16a085;
+            --c-abr: #27ae60;
+            --c-may: #2980b9;
+            --c-jun: #8e44ad;
+            --c-jul: #d35400;
+            --c-ago: #c0392b;
+            --c-sep: #7f8c8d;
+            --c-oct: #2ecc71;
+            --c-nov: #f39c12;
+            --c-dic: #1abc9c;
+            --border-bold: 3px solid #000;
+        }
+
+        body { font-family: 'Arial', sans-serif; background: #fff; margin: 20px; color: #333; }
+
+        /* Encabezado con el cambio solicitado: fondo rojo suave */
+        .main-header { 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 30px; 
+            border-bottom: 2px solid #eee; 
+            padding: 20px; /* Ajuste ligero de padding */
+            background-color: #fdf2f2; /* Rojo suave para evitar el blanco puro */
+            border-radius: 8px;
+        }
+        .header-text { text-align: center; }
+        .main-header h1 { font-size: 28px; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+        .main-header h2 { font-size: 20px; margin: 10px 0 0 0; color: #555; }
+        
+        .claro-logo {
+            position: absolute;
+            right: 15px;
+            height: 60px; /* Ajuste del tamaño del logo */
+        }
+
+        .kanban-grid {
+            display: grid;
+            grid-template-columns: 120px repeat(4, 1fr);
+            border: var(--border-bold);
+            min-width: 1100px;
+        }
+
+        .header-cell {
+            padding: 20px 10px; text-align: center; font-weight: bold; background: #f8f9fa;
+            border-bottom: var(--border-bold); border-right: 1px solid #000;
+        }
+
+        .month-label {
+            color: white; font-weight: bold; padding: 15px 10px;
+            display: flex; align-items: center; justify-content: center;
+            border-bottom: 1px solid rgba(255,255,255,0.2); border-right: var(--border-bold);
+        }
+
+        .cell {
+            padding: 12px; border-bottom: 1px solid #ddd;
+            border-right: 1px solid #000; min-height: 90px;
+            background-color: #fcfcfc;
+        }
+
+        .card {
+            background: var(--bg-color);
+            color: white; padding: 12px; border-radius: 6px; margin-bottom: 10px;
+            cursor: pointer; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15); border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .card b { display: block; font-size: 13px; text-align: center; text-transform: uppercase; }
+
+        .details {
+            max-height: 0; opacity: 0; overflow: hidden;
+            transition: all 0.4s ease; font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .card.active .details {
+            max-height: 250px; opacity: 1; margin-top: 12px;
+            padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .info-item { margin-bottom: 4px; display: flex; justify-content: space-between; }
+        .info-item strong { color: rgba(255,255,255,0.8); margin-right: 10px; }
+
+        .ene { background-color: var(--c-ene); } .feb { background-color: var(--c-feb); }
+        .mar { background-color: var(--c-mar); } .abr { background-color: var(--c-abr); }
+        .may { background-color: var(--c-may); } .jun { background-color: var(--c-jun); }
+        .jul { background-color: var(--c-jul); } .ago { background-color: var(--c-ago); }
+        .sep { background-color: var(--c-sep); } .oct { background-color: var(--c-oct); }
+        .nov { background-color: var(--c-nov); } .dic { background-color: var(--c-dic); }
+    </style>
+</head>
+<body>
+
+    <div class="main-header">
+        <div class="header-text">
+            <h1>Universidad Claro Honduras</h1>
+            <h2>Planificación de programas de formación para las academias</h2>
+        </div>
+        <img src="https://logos-world.net/wp-content/uploads/2023/03/Claro-Logo-2004.png" alt="Logo Claro" class="claro-logo">
+    </div>
+
+    <div class="kanban-grid">
+        <div class="header-cell" style="border-right: var(--border-bold);">MES</div>
+        <div class="header-cell">Academia Liderazgo</div>
+        <div class="header-cell">Academia Digital</div>
+        <div class="header-cell">Academia Ventas</div>
+        <div class="header-cell" style="border-right: none;">A. Experiencia Cliente</div>
+
+        <div class="month-label ene">Enero</div>
+        <div class="cell"></div>
+        <div class="cell">
+            <div class="card active" style="--bg-color: var(--c-ene)" onclick="toggleCard(this)">
+                <b>Inteligencia Artificial</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Enero 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Marzo 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 20 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 50</div>
+                    <div class="info-item"><strong>Impartido por:</strong> José Átala</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div><div class="cell"></div>
+
+        <div class="month-label feb">Febrero</div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-feb)" onclick="toggleCard(this)">
+                <b>Mandos Medios ‘25</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Febrero 25</div>
+                    <div class="info-item"><strong>Fin:</strong> Mayo 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 144 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 25</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Unitec</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-feb)" onclick="toggleCard(this)">
+                <b>Power BI 5ta Gen</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Febrero 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Junio 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 40 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 30</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Osman Mejia</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div><div class="cell"></div>
+
+        <div class="month-label mar">Marzo</div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-mar)" onclick="toggleCard(this)">
+                <b>Lideres en Crecimiento</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Marzo 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Mayo 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 40 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 15</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Pendiente</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-mar)" onclick="toggleCard(this)">
+                <b>Ofimática Moderna (Canva)</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Marzo 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Junio 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 20 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 20</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Cristian Espinoza</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div><div class="cell"></div>
+
+        <div class="month-label abr">Abril</div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-abr)" onclick="toggleCard(this)">
+                <b>Mandos Medios ‘26</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Abril 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Diciembre 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 144 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 25</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Pendiente</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+
+        <div class="month-label may">Mayo</div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-may)" onclick="toggleCard(this)">
+                <b>Desayuno de Lideres</b>
+                <div class="details">
+                    <div class="info-item"><strong>Fecha:</strong> Mayo 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 4 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 120</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Equipo Gerencial</div>
+                </div>
+            </div>
+            <div class="card" style="--bg-color: var(--c-may)" onclick="toggleCard(this)">
+                <b>Formador de Formadores</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Mayo 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Julio 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 30 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 10</div>
+                    <div class="info-item"><strong>Impartido por:</strong> UTH</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+
+        <div class="month-label jun">Junio</div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-jun)" onclick="toggleCard(this)">
+                <b>Liderazgo Multigeneracionales</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Junio 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Septiembre 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 40 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 15</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Pendiente</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-jun)" onclick="toggleCard(this)">
+                <b>Power BI Avanzado</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Junio 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Agosto 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 20 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 30</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Osman Mejia</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div><div class="cell"></div>
+
+        <div class="month-label jul">Julio</div>
+        <div class="cell"></div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-jul)" onclick="toggleCard(this)">
+                <b>Storytelling en Canva</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Julio 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Agosto 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 12 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 20</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Joplynn Barcenas</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div><div class="cell"></div>
+
+        <div class="month-label ago">Agosto</div>
+        <div class="cell"></div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-ago)" onclick="toggleCard(this)">
+                <b>Power BI 6ta Gen</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Agosto 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Diciembre 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 40 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 25</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Pendiente</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div><div class="cell"></div>
+
+        <div class="month-label sep">Septiembre</div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-sep)" onclick="toggleCard(this)">
+                <b>Liderazgo más Humano</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Septiembre 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Noviembre 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 40 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 20</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Pendiente</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+
+        <div class="month-label nov">Noviembre</div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-nov)" onclick="toggleCard(this)">
+                <b>Desayuno de Lideres (Nov)</b>
+                <div class="details">
+                    <div class="info-item"><strong>Fecha:</strong> Noviembre 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 4 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 120</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Equipo Gerencial</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+    </div>
+
+    <script>
+        function toggleCard(card) {
+            card.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
