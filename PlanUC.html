@@ -24,7 +24,6 @@
 
         body { font-family: 'Arial', sans-serif; background: #fff; margin: 20px; color: #333; }
 
-        /* Encabezado con el cambio solicitado: fondo rojo suave */
         .main-header { 
             display: flex;
             justify-content: center;
@@ -32,8 +31,8 @@
             position: relative;
             margin-bottom: 30px; 
             border-bottom: 2px solid #eee; 
-            padding: 20px; /* Ajuste ligero de padding */
-            background-color: #fdf2f2; /* Rojo suave para evitar el blanco puro */
+            padding: 20px;
+            background-color: #fdf2f2;
             border-radius: 8px;
         }
         .header-text { text-align: center; }
@@ -43,7 +42,7 @@
         .claro-logo {
             position: absolute;
             right: 15px;
-            height: 60px; /* Ajuste del tamaño del logo */
+            height: 60px;
         }
 
         .kanban-grid {
@@ -133,7 +132,19 @@
                 </div>
             </div>
         </div>
-        <div class="cell"></div><div class="cell"></div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-ene)" onclick="toggleCard(this)">
+                <b>Inducción y Fundamentos</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Enero 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Marzo 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 48 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 40</div>
+                    <div class="info-item"><strong>Impartido por:</strong> RRHH / Comercial</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div>
 
         <div class="month-label feb">Febrero</div>
         <div class="cell">
@@ -160,7 +171,19 @@
                 </div>
             </div>
         </div>
-        <div class="cell"></div><div class="cell"></div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-feb)" onclick="toggleCard(this)">
+                <b>Técnicas de Venta</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Febrero 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Junio 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 72 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 35</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Facil. Internos/Ext</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div>
 
         <div class="month-label mar">Marzo</div>
         <div class="cell">
@@ -187,7 +210,8 @@
                 </div>
             </div>
         </div>
-        <div class="cell"></div><div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
 
         <div class="month-label abr">Abril</div>
         <div class="cell">
@@ -202,7 +226,8 @@
                 </div>
             </div>
         </div>
-        <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div> <div class="cell"></div>
 
         <div class="month-label may">Mayo</div>
         <div class="cell">
@@ -226,12 +251,25 @@
                 </div>
             </div>
         </div>
-        <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-may)" onclick="toggleCard(this)">
+                <b>Certificación SQI</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Mayo 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Agosto 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 50 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 20</div>
+                    <div class="info-item"><strong>Impartido por:</strong> SQI Latin America</div>
+                </div>
+            </div>
+        </div>
 
         <div class="month-label jun">Junio</div>
         <div class="cell">
             <div class="card" style="--bg-color: var(--c-jun)" onclick="toggleCard(this)">
-                <b>Liderazgo Multigeneracionales</b>
+                <b>Liderazgo Multigeneracional</b>
                 <div class="details">
                     <div class="info-item"><strong>Inicio:</strong> Junio 26</div>
                     <div class="info-item"><strong>Fin:</strong> Septiembre 26</div>
@@ -253,7 +291,8 @@
                 </div>
             </div>
         </div>
-        <div class="cell"></div><div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
 
         <div class="month-label jul">Julio</div>
         <div class="cell"></div>
@@ -269,7 +308,19 @@
                 </div>
             </div>
         </div>
-        <div class="cell"></div><div class="cell"></div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-jul)" onclick="toggleCard(this)">
+                <b>Ventas Digitales y CRM</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Julio 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Septiembre 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 60 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 30</div>
+                    <div class="info-item"><strong>Impartido por:</strong> Área de Sistemas</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div>
 
         <div class="month-label ago">Agosto</div>
         <div class="cell"></div>
@@ -285,7 +336,19 @@
                 </div>
             </div>
         </div>
-        <div class="cell"></div><div class="cell"></div>
+        <div class="cell">
+            <div class="card" style="--bg-color: var(--c-ago)" onclick="toggleCard(this)">
+                <b>Liderazgo en Ventas</b>
+                <div class="details">
+                    <div class="info-item"><strong>Inicio:</strong> Agosto 26</div>
+                    <div class="info-item"><strong>Fin:</strong> Noviembre 26</div>
+                    <div class="info-item"><strong>Duración:</strong> 90 horas</div>
+                    <div class="info-item"><strong>Participantes:</strong> 20</div>
+                    <div class="info-item"><strong>Impartido por:</strong> A. Liderazgo / Univ.</div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div>
 
         <div class="month-label sep">Septiembre</div>
         <div class="cell">
@@ -300,7 +363,9 @@
                 </div>
             </div>
         </div>
-        <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
 
         <div class="month-label nov">Noviembre</div>
         <div class="cell">
@@ -314,7 +379,9 @@
                 </div>
             </div>
         </div>
-        <div class="cell"></div><div class="cell"></div><div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
     </div>
 
     <script>
