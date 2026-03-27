@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet Corporativa | Panel de Control</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --bg-color: #f4f7f6;
+            --sidebar-width: 250px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            background-color: var(--bg-color);
+        }
+
+        /* Barra Lateral */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+
+        .sidebar nav a {
+            padding: 15px 25px;
+            text-decoration: none;
+            color: #bdc3c7;
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .sidebar nav a i {
+            margin-right: 10px;
+        }
+
+        .sidebar nav a:hover, .sidebar nav a.active {
+            background-color: #34495e;
+            color: white;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        /* Contenido Principal */
+        .main-content {
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .container {
+            padding: 30px;
+            flex-grow: 1;
+        }
+
+        .report-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            height: calc(100% - 40px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .report-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+
+        .iframe-container {
+            position: relative;
+            flex-grow: 1;
+            width: 100%;
+            min-height: 500px;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>INTRANET CORP</h2>
+        <nav>
+            <a href="#"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#" class="active"><i class="fas fa-chart-bar"></i> Informe Final Irene</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Documentación</a>
+            <a href="#"><i class="fas fa-users"></i> Equipo</a>
+            <a href="#"><i class="fas fa-cog"></i> Configuración</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <div class="user-info">
+                <strong>Bienvenido, Usuario</strong> | <small>26 de Marzo, 2026</small>
+            </div>
+            <div class="actions">
+                <i class="fas fa-bell"></i>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="report-card">
+                <h3><i class="fas fa-database"></i> Visualización de Datos: Informe Final</h3>
+                
+                <div class="iframe-container">
+                    <iframe 
+                        title="Informe Final Irene" 
+                        src="https://app.powerbi.com/view?r=eyJrIjoiOWFiMjZmZTctYWViZC00N2JlLWI0NWUtZGVkODY3NjRiZTJkIiwidCI6IjRhMjYxZjg5LThlYzgtNDdjYi05ZTQyLTc0N2MzZWIzNzU3ZiJ9" 
+                        allowFullScreen="true">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
